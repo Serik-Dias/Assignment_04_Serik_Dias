@@ -94,3 +94,9 @@ Recorded results in this submission:
 - UI tests run in jsdom (simulated DOM), not a real browser. Real-device, keyboard-only and screen-reader testing have not been completed.
 - The availability rules exist twice: `booking.py` (regression baseline) and `src/domain/availability.js` (used by the app).
 - No original Assignment #03 web source export or project URL was present in the supplied archive, so the new frontend is a reconstructed equivalent rather than a patch to the missing original frontend.
+
+## Git references
+Repository: https://github.com/Serik-Dias/Assignment_04_Serik_Dias
+Initial version: a1d5ee3
+Final version: c762a3f
+
