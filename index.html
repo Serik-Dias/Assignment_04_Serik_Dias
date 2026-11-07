@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check fictional campus room availability using capacity, equipment and time requirements.">
+  <title>Smart Campus — Room Availability</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/ui/app.js"></script>
+</head>
+<body>
+  <header class="topbar"><div class="container topbar__inner"><div class="brand-mark">SC</div><div><p class="eyebrow">SMART CAMPUS</p><h1>Room availability checker</h1></div><span class="demo-tag">DEMO</span></div></header>
+  <main class="container layout">
+    <section class="intro"><p class="eyebrow">PLAN YOUR STUDY SESSION</p><h2>Find a room that fits.</h2><p>Choose your group size, required equipment and a time. The checker uses fictional room data and a fixed demo time.</p></section>
+    <section class="panel requirements" aria-labelledby="requirements-title">
+      <div class="section-heading"><div><p class="eyebrow">STEP 1</p><h2 id="requirements-title">Your requirements</h2></div><span class="current-time">Current demo time <strong id="demo-time">09:00</strong></span></div>
+      <div class="form-grid">
+        <label>Number of attendees<input id="attendees" type="number" min="1" max="200" value="20"></label>
+        <fieldset><legend>Required equipment</legend><div class="checks">
+          <label class="check"><input type="checkbox" name="equipment" value="projector"> Projector</label>
+          <label class="check"><input type="checkbox" name="equipment" value="whiteboard"> Whiteboard</label>
+          <label class="check"><input type="checkbox" name="equipment" value="computers"> Computers</label>
+          <label class="check"><input type="checkbox" name="equipment" value="microphone"> Microphone</label>
+          <label class="check"><input type="checkbox" name="equipment" value="video-conference"> Video conference</label>
+        </div></fieldset>
+        <label>Start time<input id="start" type="text" inputmode="numeric" pattern="(?:[01]\d|2[0-3]):[0-5]\d|24:00" placeholder="HH:MM" value="11:00" required></label>
+        <label>End time<input id="end" type="text" inputmode="numeric" pattern="(?:[01]\d|2[0-3]):[0-5]\d|24:00" placeholder="HH:MM (or 24:00)" value="12:00" required></label>
+      </div>
+      <p class="hint">Use 24-hour HH:MM. The start must be later than <span id="hint-demo-time">09:00</span>. Maximum duration: 120 minutes. 24:00 is the end of the day.</p>
+    </section>
+    <section class="panel" aria-labelledby="rooms-title"><div class="section-heading"><div><p class="eyebrow">STEP 2</p><h2 id="rooms-title">Matching rooms</h2></div><span class="muted">Fictional catalogue</span></div>
+      <div id="room-list" class="room-list" aria-live="polite"></div>
+      <label class="select-label">Check this room<select id="room"></select></label>
+    </section>
+    <section class="result result--unavailable" id="availability-result" aria-live="polite"><div class="result-icon" aria-hidden="true">✓</div><div><p class="eyebrow">AVAILABILITY RESULT</p><h2 id="status-text">Select your requirements to begin.</h2></div><button id="check-button" type="button">Check availability</button></section>
+    <p class="disclaimer">Availability check only. No booking is created or stored. All rooms and bookings are fictional.</p>
+  </main>
+  <footer><div class="container">Software Engineering · Assignment #04 · Serik Dias</div></footer>
+</body>
+</html>

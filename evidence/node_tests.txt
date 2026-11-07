@@ -1,0 +1,219 @@
+$ npm test
+
+> smart-campus-room-checker@1.1.0 test
+> node --test
+
+TAP version 13
+# Subtest: AC1: accepts a valid future same-day interval
+ok 1 - AC1: accepts a valid future same-day interval
+  ---
+  duration_ms: 2.623363
+  type: 'test'
+  ...
+# Subtest: AC1: rejects start equal to now
+ok 2 - AC1: rejects start equal to now
+  ---
+  duration_ms: 0.252939
+  type: 'test'
+  ...
+# Subtest: AC1: rejects reversed and zero-length intervals
+ok 3 - AC1: rejects reversed and zero-length intervals
+  ---
+  duration_ms: 0.182152
+  type: 'test'
+  ...
+# Subtest: AC1: rejects values outside the day
+ok 4 - AC1: rejects values outside the day
+  ---
+  duration_ms: 0.128052
+  type: 'test'
+  ...
+# Subtest: AC1: rejects non-integer values
+ok 5 - AC1: rejects non-integer values
+  ---
+  duration_ms: 0.119169
+  type: 'test'
+  ...
+# Subtest: AC2: exactly 120 minutes is allowed
+ok 6 - AC2: exactly 120 minutes is allowed
+  ---
+  duration_ms: 0.101561
+  type: 'test'
+  ...
+# Subtest: AC2: 121 minutes is rejected
+ok 7 - AC2: 121 minutes is rejected
+  ---
+  duration_ms: 0.160128
+  type: 'test'
+  ...
+# Subtest: AC3: blocked rooms are unavailable
+ok 8 - AC3: blocked rooms are unavailable
+  ---
+  duration_ms: 0.159023
+  type: 'test'
+  ...
+# Subtest: AC4: touching the end of a booking is allowed
+ok 9 - AC4: touching the end of a booking is allowed
+  ---
+  duration_ms: 0.377779
+  type: 'test'
+  ...
+# Subtest: AC4: touching the start of a booking is allowed
+ok 10 - AC4: touching the start of a booking is allowed
+  ---
+  duration_ms: 0.368071
+  type: 'test'
+  ...
+# Subtest: AC4: partial and contained overlaps are rejected
+ok 11 - AC4: partial and contained overlaps are rejected
+  ---
+  duration_ms: 0.170476
+  type: 'test'
+  ...
+# Subtest: AC5: checking never mutates the room booking data
+ok 12 - AC5: checking never mutates the room booking data
+  ---
+  duration_ms: 0.914073
+  type: 'test'
+  ...
+# Subtest: AC1: end of day is valid and formatted as 24:00
+ok 13 - AC1: end of day is valid and formatted as 24:00
+  ---
+  duration_ms: 0.135646
+  type: 'test'
+  ...
+# Subtest: fixed demo time remains 09:00
+ok 14 - fixed demo time remains 09:00
+  ---
+  duration_ms: 0.085598
+  type: 'test'
+  ...
+# Subtest: time input parser accepts 24:00 and rejects malformed values
+ok 15 - time input parser accepts 24:00 and rejects malformed values
+  ---
+  duration_ms: 0.2674
+  type: 'test'
+  ...
+# Subtest: AC6: malformed time input gets an HH:MM hint, not a minutes message
+ok 16 - AC6: malformed time input gets an HH:MM hint, not a minutes message
+  ---
+  duration_ms: 0.171912
+  type: 'test'
+  ...
+# Subtest: AC6: start-time message reports the configured current time
+ok 17 - AC6: start-time message reports the configured current time
+  ---
+  duration_ms: 0.144971
+  type: 'test'
+  ...
+# Subtest: F1: capacity equal to requested attendees is accepted
+ok 18 - F1: capacity equal to requested attendees is accepted
+  ---
+  duration_ms: 0.921736
+  type: 'test'
+  ...
+# Subtest: F1: rooms below requested capacity are excluded
+ok 19 - F1: rooms below requested capacity are excluded
+  ---
+  duration_ms: 0.207604
+  type: 'test'
+  ...
+# Subtest: F2: every selected equipment item is required
+ok 20 - F2: every selected equipment item is required
+  ---
+  duration_ms: 0.136553
+  type: 'test'
+  ...
+# Subtest: F2: a room missing one required item is excluded
+ok 21 - F2: a room missing one required item is excluded
+  ---
+  duration_ms: 1.223837
+  type: 'test'
+  ...
+# Subtest: F4: no matches returns an empty list
+ok 22 - F4: no matches returns an empty list
+  ---
+  duration_ms: 0.874477
+  type: 'test'
+  ...
+# Subtest: invalid attendee count returns no matches
+ok 23 - invalid attendee count returns no matches
+  ---
+  duration_ms: 0.193238
+  type: 'test'
+  ...
+# Subtest: F3: a blocked room remains unavailable even with a free time
+ok 24 - F3: a blocked room remains unavailable even with a free time
+  ---
+  duration_ms: 1.078981
+  type: 'test'
+  ...
+# Subtest: F5/integration: switching rooms uses the newly selected room bookings
+ok 25 - F5/integration: switching rooms uses the newly selected room bookings
+  ---
+  duration_ms: 0.172437
+  type: 'test'
+  ...
+# Subtest: F5: an unknown selected room cannot inherit another room result
+ok 26 - F5: an unknown selected room cannot inherit another room result
+  ---
+  duration_ms: 0.208937
+  type: 'test'
+  ...
+# Subtest: catalogue contains at least four rooms with independent required fields
+ok 27 - catalogue contains at least four rooms with independent required fields
+  ---
+  duration_ms: 0.287238
+  type: 'test'
+  ...
+# Subtest: UI integration assets are wired as a responsive module application
+ok 28 - UI integration assets are wired as a responsive module application
+  ---
+  duration_ms: 11.909238
+  type: 'test'
+  ...
+# Subtest: UI: initial render lists matching rooms and shows a result
+ok 29 - UI: initial render lists matching rooms and shows a result
+  ---
+  duration_ms: 3.878946
+  type: 'test'
+  ...
+# Subtest: UI F5: switching the selected room refreshes the result
+ok 30 - UI F5: switching the selected room refreshes the result
+  ---
+  duration_ms: 6.300771
+  type: 'test'
+  ...
+# Subtest: UI F4: no matching rooms shows the empty state and disables the selector
+ok 31 - UI F4: no matching rooms shows the empty state and disables the selector
+  ---
+  duration_ms: 13.865393
+  type: 'test'
+  ...
+# Subtest: UI F2: selecting equipment narrows the room list (all items required)
+ok 32 - UI F2: selecting equipment narrows the room list (all items required)
+  ---
+  duration_ms: 16.110531
+  type: 'test'
+  ...
+# Subtest: UI AC2: 120 minutes accepted, 121 minutes rejected
+ok 33 - UI AC2: 120 minutes accepted, 121 minutes rejected
+  ---
+  duration_ms: 3.232998
+  type: 'test'
+  ...
+# Subtest: UI AC6: malformed time shows an HH:MM hint
+ok 34 - UI AC6: malformed time shows an HH:MM hint
+  ---
+  duration_ms: 8.070191
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 902.005726

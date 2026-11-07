@@ -1,0 +1,10 @@
+$ python -m unittest -v test_booking.py
+test_acceptance_cases (test_booking.BookingTests.test_acceptance_cases) ... ok
+test_nested_lists_remain_unchanged_after_repeated_checks (test_booking.BookingTests.test_nested_lists_remain_unchanged_after_repeated_checks) ... ok
+test_tuple_collection_is_supported (test_booking.BookingTests.test_tuple_collection_is_supported) ... ok
+test_whole_valued_floats_are_not_python_integers (test_booking.BookingTests.test_whole_valued_floats_are_not_python_integers) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
